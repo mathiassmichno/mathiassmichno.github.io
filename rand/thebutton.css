@@ -1,0 +1,38 @@
+@namespace url(http://www.w3.org/1999/xhtml);
+
+@-moz-document url("http://www.reddit.com/r/thebutton") {
+
+}
+#header{
+  display: none;
+}
+
+.side{
+  display: none;
+}
+
+#siteTable{
+  display: none;
+}
+
+.footer-parent{
+  display: none;
+}
+
+.content{
+  margin: 0;
+  padding-top: 100px;
+  background: none;
+}
+
+.debuginfo{
+  display: none;
+}
+
+h1{
+  display: none;
+}
+
+.denied{
+  display: none;
+}
