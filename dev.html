@@ -63,26 +63,37 @@
     
 
     $(document).ready(function(){
-      $.getJSON(
+      doStuff();
+      window.setInterval(function(){
+        doStuff();
+      }, 10000);      
+    });
+
+    function doStuff(){
+    $.getJSON(
         "http://www.reddit.com/r/shittyreactiongifs.json?jsonp=?",
         function foo(data)
         {
           random = Math.ceil(Math.random() * 50);
           $.each(
-            data.data.children.slice(random-1, random),
+            data.data.children.slice(random, random+20),
             function (i, post) {
-              $("#reddit-content").append( '<h1 class="chead">' + post.data.title + '</h1>' );
-              $("#reddit-content").append( '<img src="' + post.data.url + '" >');
-              $("#reddit-content").append( '<hr>' );
-
+              $("#reddit-content").html( '<h1 class="chead">' + post.data.title + '</h1>' );
+              $('.chead').css('opacity', '0.6');
+              var imgUrl = post.data.url;
+              imgUrl = imgUrl.replace("gifv", "gif");
+              $('body').css('background-image', 'url(' + imgUrl + ')').css('background-size', '100% auto');
+              $('.masthead').hide();
+              $('.mastfoot').css('opacity', '0.2');
+              return !(/(.gif|.jpg)$/.test(imgUrl));
             }
           )
         }
       )
       .success(function() {})
       .error(function() { alert("error"); })
-      .complete(function() {});
-    });
+      .complete(function() {});  
+    }
     </script>
   </body>
 </html>
