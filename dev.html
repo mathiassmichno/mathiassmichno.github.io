@@ -38,7 +38,7 @@
           </div>
 
           <div class="inner cover">
-            <h1 id="chead" class="cover-heading">60:00</h1>
+            <div id="reddit-content"></div>
           </div>
 
           <div class="mastfoot">
@@ -58,21 +58,31 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <script type="text/javascript">
-    $(document).ready(function(){
-    $.ajax({
-        url: 'http://reddit.com/r/shittyreactiongifs/.json',
-        dataType: 'jsonp',
-        success: function(json) {
-            // Rates are in `json.rates`
-            // Base currency (USD) is `json.base`
-            // UNIX Timestamp when rates were collected is in `json.timestamp`        
 
-            src = json.data.children[0].data.url;  
-            alert(src);
+    <script type="text/javascript">
+    
+
+    $(document).ready(function(){
+      $.getJSON(
+        "http://www.reddit.com/r/shittyreactiongifs.json?jsonp=?",
+        function foo(data)
+        {
+          random = Math.ceil(Math.random() * 50);
+          $.each(
+            data.data.children.slice(random-1, random),
+            function (i, post) {
+              $("#reddit-content").append( '<h1 class="chead">' + post.data.title + '</h1>' );
+              $("#reddit-content").append( '<img src="' + post.data.url + '" >');
+              $("#reddit-content").append( '<hr>' );
+
+            }
+          )
         }
+      )
+      .success(function() {})
+      .error(function() { alert("error"); })
+      .complete(function() {});
     });
-});
     </script>
   </body>
 </html>
