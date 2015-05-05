@@ -38,7 +38,14 @@
           </div>
 
           <div class="inner cover">
-            <div id="reddit-content"></div>
+            <div id="links">
+              <nav>
+                <ul class="nav">
+                  <li><a href="srg.html">r/shittyreactiongifs</a></li>
+                  <li><a href="rgifs.html">r/reactiongifs</a></li>
+                  <li><a href="gifs.html">r/gifs</a></li>
+                </ul>
+              </nav></div>
           </div>
 
           <div class="mastfoot">
@@ -58,42 +65,5 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
-    <script type="text/javascript">
-    
-
-    $(document).ready(function(){
-      doStuff();
-      window.setInterval(function(){
-        doStuff();
-      }, 10000);      
-    });
-
-    function doStuff(){
-    $.getJSON(
-        "http://www.reddit.com/r/shittyreactiongifs.json?jsonp=?",
-        function foo(data)
-        {
-          random = Math.ceil(Math.random() * 50);
-          $.each(
-            data.data.children.slice(random, random+20),
-            function (i, post) {
-              $("#reddit-content").html( '<h1 class="chead">' + post.data.title + '</h1>' );
-              $('.chead').css('opacity', '0.6');
-              var imgUrl = post.data.url;
-              imgUrl = imgUrl.replace("gifv", "gif");
-              $('body').css('background-image', 'url(' + imgUrl + ')').css('background-size', '100% auto');
-              $('.masthead').hide();
-              $('.mastfoot').css('opacity', '0.2');
-              return !(/(.gif|.jpg)$/.test(imgUrl));
-            }
-          )
-        }
-      )
-      .success(function() {})
-      .error(function() { alert("error"); })
-      .complete(function() {});  
-    }
-    </script>
   </body>
 </html>
