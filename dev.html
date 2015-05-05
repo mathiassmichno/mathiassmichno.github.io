@@ -57,14 +57,22 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script type="text/javascript">
     $(document).ready(function(){
-      $('#chead').get('http://whatthecommit.com/ #content');
+    $.ajax({
+        url: 'http://reddit.com/r/shittyreactiongifs/.json',
+        dataType: 'jsonp',
+        success: function(json) {
+            // Rates are in `json.rates`
+            // Base currency (USD) is `json.base`
+            // UNIX Timestamp when rates were collected is in `json.timestamp`        
+
+            src = json.data.children[0].data.url;  
+            alert(src);
+        }
     });
+});
     </script>
   </body>
 </html>
