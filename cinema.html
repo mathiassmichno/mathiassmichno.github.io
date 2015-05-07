@@ -31,23 +31,14 @@
                   <li><a href="index.html">Home</a></li>
                   <li><a href="projects.html">Projects</a></li>
                   <li><a href="#">Contact</a></li>
-                  <li class="active"><a href="#">/dev/random</a></li>
+                  <li><a href="dev.html">/dev/random</a></li>
                 </ul>
               </nav>
             </div>
           </div>
 
           <div class="inner cover">
-            <div id="links">
-              <nav>
-                <ul class="nav">
-                  <li><a href="srg.html">r/shittyreactiongifs</a></li>
-                  <li><a href="rgifs.html">r/reactiongifs</a></li>
-                  <li><a href="gifs.html">r/gifs</a></li>  
-                  <li><a href="blackgifs.html">r/blackpeoplegifs</a></li>
-                  <li><a href="cinema.html">r/cinemagraphs</a></li>
-                </ul>
-              </nav></div>
+            <div id="reddit-content"></div>
           </div>
 
           <div class="mastfoot">
@@ -67,5 +58,41 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+    
+
+    $(document).ready(function(){
+      doStuff();
+      window.setInterval(function(){
+        doStuff();
+      }, 10000);      
+    });
+
+    function doStuff(){
+    $.getJSON(
+        "http://www.reddit.com/r/cinemagraphs.json?jsonp=?",
+        function foo(data)
+        {
+          random = Math.ceil(Math.random() * 30);
+          $.each(
+            data.data.children.slice(random, random+20),
+            function (i, post) {
+              $('.chead').css('opacity', '0.6');
+              var imgUrl = post.data.url;
+              imgUrl = imgUrl.replace("gifv", "gif");
+              $('body').css('background-image', 'url(' + imgUrl + ')').css('background-size', '100% auto');
+              $('.masthead').hide();
+              $('.mastfoot').css('opacity', '0.2');
+              return !(/(.gif|.jpg)$/.test(imgUrl));
+            }
+          )
+        }
+      )
+      .success(function() {})
+      .error(function() { alert("error"); })
+      .complete(function() {});  
+    }
+    </script>
   </body>
 </html>
