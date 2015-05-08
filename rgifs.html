@@ -43,7 +43,7 @@
 
           <div class="mastfoot">
             <div class="inner">
-              <p>&copy; Mathias Sass Michno</p>
+              <p id="footer">&copy; Mathias Sass Michno</p>
             </div>
           </div>
 
@@ -84,7 +84,7 @@
               imgUrl = imgUrl.replace("gifv", "gif");
               $('body').css('background-image', 'url(' + imgUrl + ')').css('background-size', '100% auto');
               $('.masthead').hide();
-              $('.mastfoot').css('opacity', '0.2');
+              $('#footer').countdown({until: +30});
               return !(/(.gif|.jpg)$/.test(imgUrl));
             }
           )
