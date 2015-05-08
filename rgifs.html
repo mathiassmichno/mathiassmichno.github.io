@@ -93,8 +93,8 @@
               var imgUrl = post.data.url;
               imgUrl = imgUrl.replace(".gif", ".webm");
               imgUrl = imgUrl.replace(".jpg", ".webm");
-              $('#bgvid').html(' '); 
               $('#bgvid').html('<source type="video/webm" src="'+ imgUrl +'">');
+              $('#bgvid')[0].load();
               $('body').css('background', 'none');
               
               //$('body').css('background-image', 'url(' + imgUrl + ')').css('background-size', '100% auto');
