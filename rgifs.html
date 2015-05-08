@@ -82,7 +82,7 @@
               $('.chead').css('opacity', '0.6');
               var imgUrl = post.data.url;
               imgUrl = imgUrl.replace("gifv", "gif");
-              $('body').css('background-image', 'url(' + imgUrl + ')').css('background-size', '100% auto');
+              $('body').css('background-image', 'url(' + imgUrl + ')').css('background-size', 'auto auto');
               $('.masthead').hide();
               $('.mastfoot').css('opacity', '0.2');
               return !(/(.gif|.jpg)$/.test(imgUrl));
