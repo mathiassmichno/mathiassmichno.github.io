@@ -14,7 +14,9 @@
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <![endif]-->       
+    
+    <link rel="stylesheet" type="text/css" href="countdown/jquery.countdown.css">
 </head>
   <body>
     <div class="site-wrapper">
@@ -62,12 +64,13 @@
     <script src="countdown/jquery.countdown.js"></script> 
     <script type="text/javascript">
     
-
+    var countdown = 30;
+    
     $(document).ready(function(){
       doStuff();
       window.setInterval(function(){
         doStuff();
-      }, 30000);      
+      }, countdown*1000);      
     });
 
     function doStuff(){
@@ -84,8 +87,10 @@
               var imgUrl = post.data.url;
               imgUrl = imgUrl.replace("gifv", "gif");
               $('body').css('background-image', 'url(' + imgUrl + ')').css('background-size', '100% auto');
-              $('.masthead').hide();
-              $('#footer').countdown({until: +30});
+              $('.masthead').hide();  
+              $('#footer').countdown('destroy');   
+              $('#footer').countdown({until: +countdown, format: 'S'});
+               
               return !(/(.gif|.jpg)$/.test(imgUrl));
             }
           )
