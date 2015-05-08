@@ -66,15 +66,15 @@
       doStuff();
       window.setInterval(function(){
         doStuff();
-      }, 10000);      
+      }, 30000);      
     });
 
     function doStuff(){
     $.getJSON(
-        "http://www.reddit.com/r/reactiongifs.json?jsonp=?",
+        "http://www.reddit.com/r/reactiongifs/hot/.json?limit=100&jsonp=?",
         function foo(data)
         {
-          random = Math.ceil(Math.random() * 30);
+          random = Math.ceil(Math.random() * 80);
           $.each(
             data.data.children.slice(random, random+20),
             function (i, post) {
