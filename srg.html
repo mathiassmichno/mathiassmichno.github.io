@@ -71,10 +71,10 @@
 
     function doStuff(){
     $.getJSON(
-        "http://www.reddit.com/r/shittyreactiongifs.json?jsonp=?",
+        "http://www.reddit.com/r/shittyreactiongifs/new/.json?limit=100&jsonp=?",
         function foo(data)
         {
-          random = Math.ceil(Math.random() * 30);
+          random = Math.ceil(Math.random() * 80);
           $.each(
             data.data.children.slice(random, random+20),
             function (i, post) {
