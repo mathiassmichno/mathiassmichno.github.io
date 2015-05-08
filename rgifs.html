@@ -16,9 +16,15 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->       
     
-    <link rel="stylesheet" type="text/css" href="countdown/jquery.countdown.css">
+    <link rel="stylesheet" type="text/css" href="countdown/jquery.countdown.css"> 
+    <link rel="stylesheet" type="text/css" href="misc.css"> 
 </head>
   <body>
+      <div>
+          <video autoplay loop id="bgvid">
+            
+          </video>
+      </div>
     <div class="site-wrapper">
 
       <div class="site-wrapper-inner">
@@ -85,13 +91,17 @@
               $("#reddit-content").html( '<h1 class="chead">' + post.data.title + '</h1>' );
               $('.chead').css('opacity', '0.6');
               var imgUrl = post.data.url;
-              imgUrl = imgUrl.replace("gifv", "gif");
-              $('body').css('background-image', 'url(' + imgUrl + ')').css('background-size', '100% auto');
+              imgUrl = imgUrl.replace(".gif", ".webm");
+              imgUrl = imgUrl.replace(".jpg", ".webm"); 
+              $('#bgvid').html('<source type="video/webm" src="'+ imgUrl +'">');
+              $('body').css('background', 'none');
+              
+              //$('body').css('background-image', 'url(' + imgUrl + ')').css('background-size', '100% auto');
               $('.masthead').hide();  
               $('#footer').countdown('destroy');   
               $('#footer').countdown({until: +countdown, format: 'S'});
                
-              return !(/(.gif|.jpg)$/.test(imgUrl));
+              return !(/(.webm)$/.test(imgUrl));
             }
           )
         }
