@@ -27,23 +27,27 @@
         <div class="row">
           <div class="col-md-4 btn-group-vertical">
             <a class="btn btn-lg btn-block btn-primary" href="steam://connect/csgoserver.michno.me/" data-toggle="tooltip" data-placement="top" title="" data-original-title="Click to connect to server">
-              Connect to<br><h2>CS:GO server!</h2>
+              Connect to<br><h2>CS:GO server</h2>
             </a>
-            <div class="btn btn-info btn-lg btn-block" data-container="body" data-toggle="popover" data-placement="bottom" data-content="<code>csgoserver.michno.me</code>">
-              Server address
+            <div class="btn btn-info btn-lg btn-block disabled">
+              Server: <code>csgoserver.michno.me</code>
             </div>
           </div>
           <div class="col-md-4 btn-group-vertical">
-            <a class="btn btn-lg btn-block btn-primary" href="mumble://mumble.michno.me/?version=1.2.0">
+            <a class="btn btn-lg btn-block btn-primary" href="mumble://mumble.michno.me/?version=1.2.0" data-toggle="tooltip" data-placement="top" title="" data-original-title="Click to connect to server">
               Connect to<br><h2>Mumble Server</h2>
             </a>  
-            <div class="text-left btn btn-info btn-lg btn-block disabled">Server: <code>mumble.michno.me</code></div>
+            <div class="btn btn-info btn-lg btn-block disabled">
+              Server: <code>mumble.michno.me</code>
+            </div>
           </div>
           <div class="col-md-4 btn-group-vertical">
-            <a class="btn btn-lg btn-block btn-primary" href="ts3server://ts.michno.me?port=9987&password=dogecoinisbetterthanbitcoin&channel=CS:GO">
+            <a class="btn btn-lg btn-block btn-primary" href="ts3server://ts.michno.me?port=9987&channel=CS:GO" data-toggle="tooltip" data-placement="top" title="" data-original-title="Click to connect to server">
               Connect to<br><h2>Teamspeak3 Server</h2>
             </a>
-            <div class="text-left btn btn-info btn-lg btn-block disabled">Server: <code>ts.michno.me</code></div>
+            <div class="btn btn-info btn-lg btn-block disabled">
+              Server: <code>ts.michno.me</code>
+            </div>
           </div>
         </div>
       </div>
@@ -56,9 +60,6 @@
     <script type="text/javascript">
     $(function () { 
       $("[data-toggle='tooltip']").tooltip(); 
-    });
-    $(function () { 
-      $("[data-toggle='popover']").popover(); 
     });
     </script>
   </body>
