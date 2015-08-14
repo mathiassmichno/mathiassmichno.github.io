@@ -76,7 +76,7 @@
     </script>
     <script type="text/javascript">
     $(window).load(function(){
-        $.getJSON( "http://api.michno.me:3000", function( data ) {
+        $.getJSON( "http://voip.michno.me:3000", function( data ) {
           if (data.name) {
             $('#csgo_status').addClass('label-success').removeClass('label-info').html('Online')
             $('#csgo_server_name').removeClass('hidden').html(data.query.host)
