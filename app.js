@@ -16,6 +16,7 @@ app.controller('mumble_server_Ajax', function ($scope, $http) {
 
 app.controller('ts3_server_Ajax', function ($scope, $http) {
     $http({method: 'GET', url: 'http://api.michno.me:3000/gameserverquery/ts3/ts.michno.me/9987'}).success(function(data) {
+        data.players.splice(1, data.players.length-1);
         $scope.ts3Data = data; // response data 
         $scope.ts3Loaded = true;
     });
