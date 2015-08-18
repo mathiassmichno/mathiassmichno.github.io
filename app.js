@@ -10,9 +10,11 @@ app.controller('mainController', function ($scope) {
         { name: 'Spacelab', url: 'spacelab' },
         { name: 'Cosmo', url: 'cosmo' },
         { name: 'Darkly', url: 'darkly' },
-        { name: 'Cyborg', url: 'cyborg' },
-        { name: 'Simplex', url: 'simplex' },
-        { name: 'United', url: 'united' }
+        { name: 'Flatly', url: 'flatly' },
+        { name: 'United', url: 'united' },
+        { name: 'Paper', url: 'paper' },
+        { name: 'Lumen', url: 'Lumen' },
+        { name: 'Superhero', url: 'superhero' }
     ];
 });
 
