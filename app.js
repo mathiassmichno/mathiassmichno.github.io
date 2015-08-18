@@ -1,7 +1,26 @@
 var app = angular.module('myapp', []);
 
+app.controller('mainController', function ($scope) {
+    // set the default bootswatch name
+    $scope.css = 'cosmo';
+       
+    // create the list of bootswatches
+    $scope.bootstraps = [
+        { name: 'Slate', url: 'slate' },
+        { name: 'Spacelab', url: 'spacelab' },
+        { name: 'Cosmo', url: 'cosmo' },
+        { name: 'Darkly', url: 'darkly' },
+        { name: 'Cyborg', url: 'cyborg' },
+        { name: 'Simplex', url: 'simplex' },
+        { name: 'United', url: 'united' }
+    ];
+});
+
 app.controller('CSGO_server_Ajax', function ($scope, $http) {
     $http({method: 'GET', url: 'http://api.michno.me:3000/gameserverquery/csgo/csgoserver.michno.me'}).success(function(data) {
+        if (data.map.indexOf('workshop') != -1) {
+            data.map = data.map.substring(data.map.lastIndexOf('/')+1, data.map.length);
+        };
         $scope.csgoData = data;
         $scope.csgoLoaded = true;
     });
