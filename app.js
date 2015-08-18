@@ -13,7 +13,7 @@ app.controller('mainController', function ($scope) {
         { name: 'Flatly', url: 'flatly' },
         { name: 'United', url: 'united' },
         { name: 'Paper', url: 'paper' },
-        { name: 'Lumen', url: 'Lumen' },
+        { name: 'Lumen', url: 'lumen' },
         { name: 'Superhero', url: 'superhero' }
     ];
 });
