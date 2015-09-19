@@ -1,4 +1,12 @@
-var app = angular.module('myapp', []);
+var app = angular.module('myapp', [])
+.config( [
+    '$compileProvider',
+    function( $compileProvider )
+    {   
+        $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|chrome-extension|steam):/);
+        // Angular before v1.2 uses $compileProvider.urlSanitizationWhitelist(...)
+    }
+]);
 
 app.controller('mainController', function($scope) {
     // set the default bootswatch name
@@ -19,8 +27,9 @@ app.controller('mainController', function($scope) {
 });
 
 app.controller('CSGO_server_Ajax', function($scope, $http) {
-    $http({method: 'GET', url: 'http://api.michno.me:3000/gameserverquery/csgo/csgoserver.michno.me'}).success(function(data) {
-        if (data.map.indexOf('workshop') != -1) {
+    $scope.csgoHost = 'csgoserver.michno.me';
+    $http({method: 'GET', url: 'http://api.michno.me:3000/gameserverquery/csgo/' + $scope.csgoHost}).success(function(data) {
+        if (data.map && data.map.indexOf('workshop') != -1) {
             data.map = data.map.substring(data.map.lastIndexOf('/')+1, data.map.length);
         };
         $scope.csgoData = data;
