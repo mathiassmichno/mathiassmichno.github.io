@@ -18,14 +18,28 @@ app.controller('mainController', function($scope) {
     ];
 });
 
-app.controller('CSGO_server_Ajax', function($scope, $http) {
-    $http({method: 'GET', url: 'http://api.michno.me:3000/gameserverquery/csgo/csgoserver.michno.me'}).success(function(data) {
-        if (data.map.indexOf('workshop') != -1) {
-            data.map = data.map.substring(data.map.lastIndexOf('/')+1, data.map.length);
-        };
-        $scope.csgoData = data;
-        $scope.csgoLoaded = true;
-    });
+app.controller('CSGO_server_Ajax', function($scope, $http, $interval) {
+    $scope.getData = function(){
+        $http.get('http://api.michno.me:3000/gameserverquery/csgo/csgoserver.michno.me').then(function(response) {
+            if (response.data.map.indexOf('workshop') != -1) {
+                response.data.map = response.data.map.substring(response.data.map.lastIndexOf('/')+1, response.data.map.length);
+            };
+            $scope.csgoData = response.data;
+            $scope.csgoLoaded = true;
+        }); 
+    };
+    
+    // Function to replicate setInterval using $timeout service.
+    $scope.intervalFunction = function(){
+        $interval(function() {
+            $scope.getData();
+        }, 10000);
+    };
+
+    // Kick off the interval
+    $scope.getData();
+    $scope.intervalFunction();  
+    
 });
 
 app.controller('mumble_server_Ajax', function($scope, $http) {
