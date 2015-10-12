@@ -76,8 +76,10 @@ app.controller('mumble_server_Ajax', function($scope, $http, $interval) {
 app.controller('ts3_server_Ajax', function($scope, $http, $interval) {
     $scope.getData = function(){
         $http.get('http://api.michno.me:3000/gameserverquery/ts3/ts.michno.me/9987').then(function(response) {
-            response.data.players.splice(response.data.players.length-1, 1);
-            $scope.ts3Data = response.data;
+            if (response.status == 200) {
+                response.data.players.splice(response.data.players.length-1, 1);           
+                $scope.ts3Data = response.data; 
+            };
             $scope.ts3Loaded = true;
         }); 
     };
