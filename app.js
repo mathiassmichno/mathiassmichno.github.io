@@ -29,8 +29,9 @@ app.controller('mainController', function($scope) {
 });
 
 app.controller('CSGO_server_Ajax', function($scope, $http, $interval) {
+    $scope.csgoHost = "csgoserver.michno.me"
     $scope.getData = function(){
-        $http.get('http://api.michno.me:3000/gameserverquery/csgo/csgoserver.michno.me').then(function(response) {
+        $http.get('http://api.michno.me:3000/gameserverquery/csgo/' + $scope.csgoHost).then(function(response) {
             if (response.data.status == "online" && response.data.map.indexOf('workshop') != -1) {
                 response.data.map = response.data.map.substring(response.data.map.lastIndexOf('/')+1, response.data.map.length);
             };
