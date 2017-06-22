@@ -1,0 +1,55 @@
+==================================================================
+https://keybase.io/michno
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://michno.me
+  * I am michno (https://keybase.io/michno) on keybase.
+  * I have a public key ASC7c-sGabvybnLor2KnV5LZ7eVUjDgA-o58vPHZ-Obxawo
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0120bb73eb0669bbf26e72e8af62a75792d9ede5548c3800fa8e7cbcf1d9f8e6f16b0a",
+            "host": "keybase.io",
+            "kid": "0120bb73eb0669bbf26e72e8af62a75792d9ede5548c3800fa8e7cbcf1d9f8e6f16b0a",
+            "uid": "86569be71ee90f0d4ffbcf3473db6a19",
+            "username": "michno"
+        },
+        "merkle_root": {
+            "ctime": 1498139740,
+            "hash": "e7cc0a6c183544439b57c8a122726d223427584f09471c340aa8819369946aad3601b22ef8657a3fb5f4ce87803657f5bbbfd2a20e09171102d3cc3a6cd40c76",
+            "hash_meta": "9d6bb611d7c93f925e5f986eb7b02bd2aea67746482b7ace1ba185d01d8f15d2",
+            "seqno": 1187208
+        },
+        "service": {
+            "hostname": "michno.me",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "client": {
+        "name": "keybase.io go client",
+        "version": "1.0.24"
+    },
+    "ctime": 1498139778,
+    "expire_in": 504576000,
+    "prev": "961dbeed5a4eb533451fd292e24e338f3449af4c7749d9324300de7988ce1fc0",
+    "seqno": 4,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgu3PrBmm78m5y6K9ip1eS2e3lVIw4APqOfLzx2fjm8WsKp3BheWxvYWTFAz57ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwYmI3M2ViMDY2OWJiZjI2ZTcyZThhZjYyYTc1NzkyZDllZGU1NTQ4YzM4MDBmYThlN2NiY2YxZDlmOGU2ZjE2YjBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwYmI3M2ViMDY2OWJiZjI2ZTcyZThhZjYyYTc1NzkyZDllZGU1NTQ4YzM4MDBmYThlN2NiY2YxZDlmOGU2ZjE2YjBhIiwidWlkIjoiODY1NjliZTcxZWU5MGYwZDRmZmJjZjM0NzNkYjZhMTkiLCJ1c2VybmFtZSI6Im1pY2hubyJ9LCJtZXJrbGVfcm9vdCI6eyJjdGltZSI6MTQ5ODEzOTc0MCwiaGFzaCI6ImU3Y2MwYTZjMTgzNTQ0NDM5YjU3YzhhMTIyNzI2ZDIyMzQyNzU4NGYwOTQ3MWMzNDBhYTg4MTkzNjk5NDZhYWQzNjAxYjIyZWY4NjU3YTNmYjVmNGNlODc4MDM2NTdmNWJiYmZkMmEyMGUwOTE3MTEwMmQzY2MzYTZjZDQwYzc2IiwiaGFzaF9tZXRhIjoiOWQ2YmI2MTFkN2M5M2Y5MjVlNWY5ODZlYjdiMDJiZDJhZWE2Nzc0NjQ4MmI3YWNlMWJhMTg1ZDAxZDhmMTVkMiIsInNlcW5vIjoxMTg3MjA4fSwic2VydmljZSI6eyJob3N0bmFtZSI6Im1pY2huby5tZSIsInByb3RvY29sIjoiaHR0cDoifSwidHlwZSI6IndlYl9zZXJ2aWNlX2JpbmRpbmciLCJ2ZXJzaW9uIjoxfSwiY2xpZW50Ijp7Im5hbWUiOiJrZXliYXNlLmlvIGdvIGNsaWVudCIsInZlcnNpb24iOiIxLjAuMjQifSwiY3RpbWUiOjE0OTgxMzk3NzgsImV4cGlyZV9pbiI6NTA0NTc2MDAwLCJwcmV2IjoiOTYxZGJlZWQ1YTRlYjUzMzQ1MWZkMjkyZTI0ZTMzOGYzNDQ5YWY0Yzc3NDlkOTMyNDMwMGRlNzk4OGNlMWZjMCIsInNlcW5vIjo0LCJ0YWciOiJzaWduYXR1cmUifaNzaWfEQLf4MWja2c9KHelFjaSX5FX6xPndLXZKAvEfWw+gJ+ph+V+ErXt5N3tYfylOuytbl1R9NygxKs3WHReQC0A3tAeoc2lnX3R5cGUgpGhhc2iCpHR5cGUIpXZhbHVlxCANz3rA+l4af9zmHu6fo90GmvQeWs4GtDP/E4FMSvEkhaN0YWfNAgKndmVyc2lvbgE=
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/michno
+
+==================================================================
